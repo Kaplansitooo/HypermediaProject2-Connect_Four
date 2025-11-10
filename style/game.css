@@ -1,11 +1,15 @@
-  table {
-    width: 80%;
-    border-collapse: collapse;
-  }
-  td {
-    width: 14.28%; /* 100% / 7 columnas */
-    height: 50px;
-    border: 1px solid #000;
-    text-align: center;
-    vertical-align: middle;
-  }
+table {
+  width: 80%;
+  border-collapse: collapse;
+}
+td {
+  width: 14.28%; /* 100% / 7 columnas */
+  height: 50px;
+  border: 1px solid #000;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#dropPiece {
+  width: 20px;
+}

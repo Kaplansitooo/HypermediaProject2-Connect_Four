@@ -1,86 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connect Four Game</title>
-    <link rel="stylesheet" href="./style/game.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style/game.css" />
+  </head>
+  <body>
     <h1>Connect Four Game</h1>
     <div>
-        Score
-        <div id="score_player1">Player 1: 0</div>
-        <div id="score_player2">Player 2: 0</div>
-        <div id="col-selector"></div>
-        <table id="game-board">
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+      Score
+      <div id="score_player1">Player 1: 0</div>
+      <div id="score_player2">Player 2: 0</div>
+      <div id="col-selector"></div>
+      <table id="game-board">
+        <tbody>
+          <button id="dropPiece1"></button>
+          <tr id="col1">
+            <td id="row1"></td>
+            <td id="row2"></td>
+            <td id="row3"></td>
+            <td id="row4"></td>
+            <td id="row5"></td>
+            <td id="row6"></td>
+          </tr>
+          <button id="dropPiece2"></button>
+          <tr id="col2">
+            <td id="row1"></td>
+            <td id="row2"></td>
+            <td id="row3"></td>
+            <td id="row4"></td>
+            <td id="row5"></td>
+            <td id="row6"></td>
+          </tr>
+          <button id="dropPiece3"></button>
+          <tr id="col3">
+            <td id="row1"></td>
+            <td id="row2"></td>
+            <td id="row3"></td>
+            <td id="row4"></td>
+            <td id="row5"></td>
+            <td id="row6"></td>
+          </tr>
+          <button id="dropPiece4"></button>
+          <tr id="col4">
+            <td id="row1"></td>
+            <td id="row2"></td>
+            <td id="row3"></td>
+            <td id="row4"></td>
+            <td id="row5"></td>
+            <td id="row6"></td>
+          </tr>
+          <button id="dropPiece5"></button>
+          <tr id="col5">
+            <td id="row1"></td>
+            <td id="row2"></td>
+            <td id="row3"></td>
+            <td id="row4"></td>
+            <td id="row5"></td>
+            <td id="row6"></td>
+          </tr>
+          <button id="dropPiece6"></button>
+          <tr id="col6">
+            <td id="row1"></td>
+            <td id="row2"></td>
+            <td id="row3"></td>
+            <td id="row4"></td>
+            <td id="row5"></td>
+            <td id="row6"></td>
+          </tr>
+          <button id="dropPiece7"></button>
+          <tr id="col7">
+            <td id="row1"></td>
+            <td id="row2"></td>
+            <td id="row3"></td>
+            <td id="row4"></td>
+            <td id="row5"></td>
+            <td id="row6"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="restart-btn">Restart Game</button>
     </div>
     <script src="./scripts/game.js"></script>
-</body>
+  </body>
 </html>
