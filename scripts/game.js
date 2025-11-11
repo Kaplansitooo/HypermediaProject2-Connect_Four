@@ -5,7 +5,28 @@ var player = [
   { name: "", color: "red", num: 2 },
 ];
 
-var board = Array.from({ length: 6 }, () => Array(7).fill(null));
+class piece {
+    constructor(player, color, row, col) {
+    this.player = player;
+    this.color = color;
+    this.row = row;
+    this.col = col;
+  }
+}
+
+class board {
+    constructor(rows = 6, cols = 7) {
+    this.rows = rows;
+    this.cols = cols;
+    this.grid = Array.from({ length: rows }, () => Array(cols).fill(null));
+  }
+
+  createEmptyGrid() {
+    return Array.from({ length: this.rows }, () =>
+      Array(this.cols).fill(null)
+    );
+  }
+}
 
 function initGame() {
   turn = "X";
