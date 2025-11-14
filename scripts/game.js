@@ -26,7 +26,7 @@ class board {
   }
 
   colFull(col) {
-    return this.grid[grid.rows - 1][col] !== null;
+    return this.grid[this.rows - 1][col] !== null;
   }
 }
 
@@ -35,8 +35,10 @@ function initGame() {
   currentPlayer = player[0];
   const restartBtn = document.getElementById("restart-btn");
   restartBtn.addEventListener("click", restartGame);
-  var board = new board();
+    board = new board();
+    buttons = [];
   board.createEmptyGrid();
+  initButtons();
 }
 
 function initButtons() {
@@ -70,8 +72,8 @@ function dropPiece(col) {
       if (board.colFull(col)) {
         console.log("Column " + col + " is now full.");
       }
-      var cellCol = document.getElementById(`col-${col}`);
-      var cell = cellCol.querySelector('[name="row' + row + '"]');
+      var cell = document.getElementById(`cell-${col+1}-${row+1}`);
+      
       cell.insertAdjacentElement("afterbegin", createPieceElement(newPiece));
       return true;
     } else {
@@ -189,3 +191,5 @@ function restartGame() {
   currentPlayer = player[0];
   alert("Game restarted!");
 }
+
+initGame();
