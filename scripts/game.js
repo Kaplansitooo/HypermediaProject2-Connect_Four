@@ -1,4 +1,4 @@
-var turn, currentPlayer, buttons;
+var turn, currentPlayer, buttons, board;
 
 var player = [
   { name: "", color: "blue", num: 1 },
@@ -14,7 +14,7 @@ class piece {
   }
 }
 
-class board {
+class Board {
   constructor(rows = 6, cols = 7) {
     this.rows = rows;
     this.cols = cols;
@@ -26,7 +26,7 @@ class board {
   }
 
   colFull(col) {
-    return this.grid[this.rows - 1][col] !== null;
+    return this.grid[0][col] !== null;
   }
 }
 
@@ -35,8 +35,8 @@ function initGame() {
   currentPlayer = player[0];
   const restartBtn = document.getElementById("restart-btn");
   restartBtn.addEventListener("click", restartGame);
-    board = new board();
-    buttons = [];
+  board = new Board();
+  buttons = [];
   board.createEmptyGrid();
   initButtons();
 }
@@ -50,8 +50,16 @@ function initButtons() {
 }
 
 function handleColumnClick(col) {
-  var droped = dropPiece(col);
-  droped ? nextTurn() : columnFullAlert();
+  var dropped = dropPiece(col);
+  if (dropped) {
+    if (!checkWin()) {
+      console.log("No win yet, next turn.");
+      nextTurn();
+    } else {
+      console.log("We have a winner!");
+      columnFullAlert();
+    }
+  }
 }
 
 columnFullAlert = () => {
@@ -59,8 +67,8 @@ columnFullAlert = () => {
 };
 
 function dropPiece(col) {
-  for (let row = 0; row <= board.rows; row++) {
-    if (board.grid[row][col] == null && board.colFull(col) === false) {
+  for (let row = board.rows - 1; row >= 0; row--) {
+    if (board.grid[row][col] == null) {
       const newPiece = new piece(
         currentPlayer.num,
         currentPlayer.color,
@@ -69,19 +77,19 @@ function dropPiece(col) {
       );
       board.grid[row][col] = newPiece;
       console.log("Dropped piece at row " + row + ", col " + col);
+      var cell = document.getElementById(`cell-${col + 1}-${row + 1}`);
+      cell.insertAdjacentElement("afterbegin", createPieceElement(newPiece));
+
       if (board.colFull(col)) {
         console.log("Column " + col + " is now full.");
+        buttons[col].disabled = true;
       }
-      var cell = document.getElementById(`cell-${col+1}-${row+1}`);
-      
-      cell.insertAdjacentElement("afterbegin", createPieceElement(newPiece));
       return true;
-    } else {
-      console.log("No more space in this column" + col);
-      buttons[col].disabled = true;
-      return false;
     }
   }
+  console.log("No more space in this column " + col);
+  buttons[col].disabled = true;
+  return false;
 }
 
 function createPieceElement(piece) {
@@ -186,9 +194,16 @@ function checkDraw() {
   }
 }
 function restartGame() {
-  board.grid = board.createEmptyGrid();
+  board = new Board();
   turn = "blue";
   currentPlayer = player[0];
+  for (let row = 0; row < board.rows; row++) {
+    for (let col = 0; col < board.cols; col++) {
+      const cell = document.getElementById(`cell-${col + 1}-${row + 1}`);
+      if (cell) cell.innerHTML = "";
+    }
+  }
+  initButtons();
   alert("Game restarted!");
 }
 
