@@ -51,14 +51,13 @@ function initButtons() {
 
 function handleColumnClick(col) {
   var dropped = dropPiece(col);
-  if (dropped) {
-    if (!checkWin()) {
-      console.log("No win yet, next turn.");
-      nextTurn();
-    } else {
-      console.log("We have a winner!");
-      columnFullAlert();
-    }
+  if(dropped){
+    // checkWin()
+    nextTurn();
+    var win =checkWin();
+    if(win){
+      alert("We have a winner!");
+    }   
   }
 }
 
