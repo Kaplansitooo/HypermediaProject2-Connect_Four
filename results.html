@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game results</title>
-    <link rel="stylesheet" href="./style/results.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Connect Four — Results</title>
+  <link rel="stylesheet" href="./style/results.css" />
 </head>
 <body>
-    <h1>Game results</h1>
-    <div id="game-board"></div>
-    <button id="restart-btn">Play again</button>
-    <script src="./scripts/results.js"></script>
+  <main class="results-wrap">
+    <header>
+      <h1>Results</h1>
+    </header>
+
+    <section class="summary">
+      <div class="winner-box">
+        <h2 id="winner-text">Winner: —</h2>
+      </div>
+
+      <div class="totals">
+        <h3>Score</h3>
+        <div class="scores">
+          <div class="score-row">
+            <div class="name" id="res-player1-name">Player 1</div>
+            <div class="value" id="res-score1">0</div>
+          </div>
+          <div class="score-row">
+            <div class="name" id="res-player2-name">Player 2</div>
+            <div class="value" id="res-score2">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="play-again" class="primary">Play again</button>
+        <button id="reset-scores" class="secondary">Reset scores</button>
+        <button id="back-menu" class="secondary">Back to menu</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./scripts/results.js"></script>
 </body>
 </html>

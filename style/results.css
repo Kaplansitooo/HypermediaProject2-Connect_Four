@@ -1,0 +1,93 @@
+:root{
+  --bg: #fbfdff;
+  --card: #fff;
+  --muted: #6b7280;
+  --accent: #0f1724;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg,#f8fbff,#eef6ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.results-wrap{
+  width:100%;
+  max-width:560px;
+  background:var(--card);
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(16,24,40,0.06);
+}
+
+header h1{
+    margin:0 0 8px 0; 
+    font-size:20px; 
+}
+.summary{ 
+    display:flex; 
+    flex-direction:column; 
+    gap:14px; 
+}
+
+.winner-box h2{ 
+    margin:0; 
+    font-size:18px; 
+    color:var(--accent); 
+}
+
+.totals h3{ 
+    margin:0; 
+    color:var(--muted); 
+    font-size:14px; 
+}
+.scores{ 
+    display:flex; 
+    flex-direction:column; 
+    gap:8px; 
+    margin-top:6px; 
+}
+.score-row{ 
+    display:flex; 
+    justify-content:space-between; 
+    background:#fbfdff; 
+    padding:10px 12px; 
+    border-radius:8px; 
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.03); 
+}
+.name{ 
+    color:var(--muted); 
+}
+.value{ 
+    font-weight:700; 
+}
+
+.actions{ 
+    display:flex; 
+    gap:8px; 
+    margin-top:12px; 
+}
+.primary{
+  background:var(--accent); 
+  color:white; 
+  border:none; 
+  padding:10px 12px; 
+  border-radius:8px; 
+  cursor:pointer;
+}
+.secondary{
+  background:#f3f4f6; 
+  border:none; 
+  padding:10px 12px; 
+  border-radius:8px; 
+  cursor:pointer;
+}
+.secondary:hover, .primary:hover{ 
+    transform: translateY(-2px); 
+}
