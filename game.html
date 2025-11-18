@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connect Four Game</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Connect Four</title>
     <link rel="stylesheet" href="./style/game.css" />
   </head>
   <body>
-    <h1>Connect Four Game</h1>
-    <div>
-      Score
-      <div id="score_player1">Player 1: 0</div>
-      <div id="score_player2">Player 2: 0</div>
-      <div id="col-selector">
-        <button id="dropPiece1"></button>
-        <button id="dropPiece2"></button>
-        <button id="dropPiece3"></button>
-        <button id="dropPiece4"></button>
-        <button id="dropPiece5"></button>
-        <button id="dropPiece6"></button>
-        <button id="dropPiece7"></button>
+    <main class="wrap">
+      <header class="header">
+        <h1>Connect Four</h1>
+        <div class="players">
+          <div id="score_player1" class="score">Player 1: <span id="score1">0</span></div>
+          <div id="score_player2" class="score">Player 2: <span id="score2">0</span></div>
+        </div>
+      </header>
+      <div class="game-features">
+        <div class="status">
+          Turn: <span id="current-turn" class="turn-indicator">Blue</span>
+        </div>
+        <div class="actions">
+          <button id="restart-btn" class="action-btn">Restart Game</button>
+        </div>
       </div>
-      <table id="game-board">
-        <tbody>
-            <tr id="row-1"></tr>
+      <section class="controls">
+        <div id="col-selector" class="col-selector" aria-label="Column buttons">
+          <button class="drop-btn" id="dropPiece1" aria-label="Drop in column 1">1</button>
+          <button class="drop-btn" id="dropPiece2" aria-label="Drop in column 2">2</button>
+          <button class="drop-btn" id="dropPiece3" aria-label="Drop in column 3">3</button>
+          <button class="drop-btn" id="dropPiece4" aria-label="Drop in column 4">4</button>
+          <button class="drop-btn" id="dropPiece5" aria-label="Drop in column 5">5</button>
+          <button class="drop-btn" id="dropPiece6" aria-label="Drop in column 6">6</button>
+          <button class="drop-btn" id="dropPiece7" aria-label="Drop in column 7">7</button>
+        </div>
+      </section>
+
+      <section class="board-container">
+        <table id="game-board" class="board" role="grid" aria-label="Connect four board">
+          <tbody>
+            <tr>
               <td id="cell-1-1"></td>
               <td id="cell-2-1"></td>
               <td id="cell-3-1"></td>
@@ -32,7 +47,7 @@
               <td id="cell-6-1"></td>
               <td id="cell-7-1"></td>
             </tr>
-            <tr id="row-2">
+            <tr>
               <td id="cell-1-2"></td>
               <td id="cell-2-2"></td>
               <td id="cell-3-2"></td>
@@ -41,7 +56,7 @@
               <td id="cell-6-2"></td>
               <td id="cell-7-2"></td>
             </tr>
-            <tr id="row-3">
+            <tr>
               <td id="cell-1-3"></td>
               <td id="cell-2-3"></td>
               <td id="cell-3-3"></td>
@@ -50,7 +65,7 @@
               <td id="cell-6-3"></td>
               <td id="cell-7-3"></td>
             </tr>
-            <tr id="row-4"></tr>
+            <tr>
               <td id="cell-1-4"></td>
               <td id="cell-2-4"></td>
               <td id="cell-3-4"></td>
@@ -59,7 +74,7 @@
               <td id="cell-6-4"></td>
               <td id="cell-7-4"></td>
             </tr>
-            <tr id="row-5"></tr>
+            <tr>
               <td id="cell-1-5"></td>
               <td id="cell-2-5"></td>
               <td id="cell-3-5"></td>
@@ -68,7 +83,7 @@
               <td id="cell-6-5"></td>
               <td id="cell-7-5"></td>
             </tr>
-            <tr id="row-6">
+            <tr>
               <td id="cell-1-6"></td>
               <td id="cell-2-6"></td>
               <td id="cell-3-6"></td>
@@ -77,10 +92,11 @@
               <td id="cell-6-6"></td>
               <td id="cell-7-6"></td>
             </tr>
-        </tbody>
-      </table>
-      <button id="restart-btn">Restart Game</button>
-    </div>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
     <script src="./scripts/game.js"></script>
   </body>
 </html>
