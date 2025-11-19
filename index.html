@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en"></html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Conecta Cuatro — Inicio</title>
+  <title>Connect Four — Home</title>
   <link rel="stylesheet" href="./style/index.css" />
 </head>
 <body>
   <main class="container">
     <header>
-      <h1>Conecta Cuatro</h1>
-      <p class="subtitle">Introduce los nombres (obligatorio) y elige los colores.</p>
+      <h1>Connect Four</h1>
+      <p class="subtitle">Enter the names (required) and choose the colors.</p>
     </header>
 
     <form id="start-form" class="form" novalidate>
       <div class="field">
-        <label for="player1_name">Jugador 1</label>
-        <input type="text" id="player1_name" placeholder="Nombre jugador 1" required />
+        <label for="player1_name">Player 1</label>
+        <input type="text" id="player1_name" placeholder="Player 1 name" required />
       </div>
 
       <div class="field">
-        <label for="player1_color">Color Jugador 1</label>
+        <label for="player1_color">Player 1 Color</label>
         <select id="player1_color">
-          <option value="blue">Azul</option>
-          <option value="red">Rojo</option>
+          <option value="blue">Blue</option>
+          <option value="red">Red</option>
         </select>
       </div>
 
       <div class="field">
-        <label for="player2_name">Jugador 2</label>
-        <input type="text" id="player2_name" placeholder="Nombre jugador 2" required />
+        <label for="player2_name">Player 2</label>
+        <input type="text" id="player2_name" placeholder="Player 2 name" required />
       </div>
 
       <div class="field">
-        <label for="player2_color">Color Jugador 2</label>
+        <label for="player2_color">Player 2 Color</label>
         <select id="player2_color">
-          <option value="red">Rojo</option>
-          <option value="blue">Azul</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
         </select>
       </div>
 
       <div class="actions">
-        <button type="submit" id="play_button" class="primary">Jugar</button>
+        <button type="submit" id="play_button" class="primary">Play</button>
       </div>
 
       <p class="notice" id="form-notice" aria-live="polite"></p>
